@@ -1,8 +1,5 @@
 package com.ecommerce.shopnest.payload;
 
-import com.ecommerce.shopnest.model.Category;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,15 +1,23 @@
 package com.ecommerce.shopnest.service;
 
-import com.ecommerce.shopnest.model.Product;
 import com.ecommerce.shopnest.payload.ProductDTO;
 import com.ecommerce.shopnest.payload.ProductResponse;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
 
 public interface ProductService {
-    ProductDTO addProduct(Long categoryId, Product product);
+    ProductDTO addProduct(Long categoryId, ProductDTO productDTO);
 
-    ProductResponse getAllProducts();
+    ProductResponse getAllProducts(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder);
 
-    ProductResponse searchByCategory(Long categoryId);
+    ProductResponse searchByCategory(Long categoryId, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder);
 
-    ProductResponse searchByKeyword(String keyword);
+    ProductResponse searchByKeyword(String keyword, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder);
+
+    ProductDTO updateProduct(Long productId, ProductDTO productDTO);
+
+    ProductDTO deleteProduct(Long productId);
+
+    ProductDTO updateProductImage(Long productId, MultipartFile image) throws IOException;
 }
